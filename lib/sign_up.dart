@@ -65,11 +65,12 @@ class _Sign_upState extends State<Sign_up> {
                         controller: _fullname,
                         decoration: InputDecoration(
                           labelText: "  full name",
-                          labelStyle: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(215, 157, 91, 67)),
-                          border: OutlineInputBorder(
+                          labelStyle:TextStyle(fontSize:15,fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                          fillColor:Colors.white,
+
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Color.fromARGB(180, 89, 99, 76),width: 2),
+
                               borderRadius: BorderRadius.circular(22.0)),
                         ),
                         validator: (value) {
@@ -86,11 +87,12 @@ class _Sign_upState extends State<Sign_up> {
                         controller: _username,
                         decoration: InputDecoration(
                           labelText: "  User name",
-                          labelStyle: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(215, 157, 91, 67)),
-                          border: OutlineInputBorder(
+                          labelStyle:TextStyle(fontSize:15,fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                          fillColor:Colors.white,
+
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Color.fromARGB(180, 89, 99, 76),width: 2),
+
                               borderRadius: BorderRadius.circular(22.0)),
                         ),
                         validator: (value) {
@@ -107,11 +109,12 @@ class _Sign_upState extends State<Sign_up> {
                         controller: emailController,
                         decoration: InputDecoration(
                           labelText: "  Email",
-                          labelStyle: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(215, 157, 91, 67)),
-                          border: OutlineInputBorder(
+                          labelStyle:TextStyle(fontSize:15,fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                          fillColor:Colors.white,
+
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Color.fromARGB(180, 89, 99, 76),width: 2),
+
                               borderRadius: BorderRadius.circular(22.0)),
                         ),
                         validator: (value) {
@@ -139,11 +142,12 @@ class _Sign_upState extends State<Sign_up> {
                             },
                           ),
                           labelText: "  Password",
-                          labelStyle: TextStyle(
-                              fontSize: 15,
-                              color: Color.fromARGB(215, 157, 91, 67),
-                              fontWeight: FontWeight.bold),
-                          border: OutlineInputBorder(
+                          labelStyle:TextStyle(fontSize:15,fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                          fillColor:Colors.white,
+
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Color.fromARGB(180, 89, 99, 76),width: 2),
+
                               borderRadius: BorderRadius.circular(22.0)),
                         ),
                         validator: (value) {
@@ -171,11 +175,12 @@ class _Sign_upState extends State<Sign_up> {
                           },
                         ),
                         labelText: "  Confirm password",
-                        labelStyle: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(215, 157, 91, 67)),
-                        border: OutlineInputBorder(
+                        labelStyle:TextStyle(fontSize:15,fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                        fillColor:Colors.white,
+
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(color: Color.fromARGB(180, 89, 99, 76),width: 2),
+
                             borderRadius: BorderRadius.circular(22.0)),
                       ),
                       validator: (value) {
