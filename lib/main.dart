@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:homelayout(email: 'email', email1: 'email1', fullname: 'fullname', username: 'username'),
+      home:first_page(),
     );
   }
 }
