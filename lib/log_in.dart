@@ -16,12 +16,13 @@ class LogIn extends StatefulWidget {
 
 class _LogInState extends State<LogIn> {
   bool _obscureText = true;
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -81,10 +82,11 @@ class _LogInState extends State<LogIn> {
                     padding: EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                     child: TextFormField(
                         controller: passwordController,
-
                         obscureText: _obscureText ,
                         decoration: InputDecoration(suffixIcon: IconButton(
-                          icon: _obscureText ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
+                          icon: _obscureText
+                              ? Icon(Icons.visibility_off)
+                              : Icon(Icons.visibility),
                           onPressed: () {
                             setState(() {
                               _obscureText = !_obscureText;
