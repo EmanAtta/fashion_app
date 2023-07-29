@@ -13,15 +13,41 @@ class _ShowEmailState extends State<ShowEmail> {
   void initState() {
     super.initState();
     getEmail();
+    getfullname();
+    getusername();
+    getemail1();
   }
 
   String userEmail = "";
+  String fullName = "";
+  String username = "";
+  String email1 = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(159, 219, 211, 188),
       body: Center(
-        child: Text(userEmail),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      // Text(userEmail),
+      Text('UserEmail:', style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold)),
+      SizedBox(height: 10.0),
+      Text(userEmail, style: TextStyle(fontSize: 20.0)),
+      SizedBox(height: 15.0),
+      Text('FullName:', style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold)),
+      SizedBox(height: 10.0),
+      Text(fullName, style: TextStyle(fontSize: 20.0)),
+      SizedBox(height: 15.0),
+      Text('UserName:', style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold)),
+      SizedBox(height: 10.0),
+      Text(username, style: TextStyle(fontSize: 20.0)),
+      SizedBox(height: 15.0),
+      Text('Email:', style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold)),
+      SizedBox(height: 10.0),
+      Text(email1, style: TextStyle(fontSize: 20.0)),
+    ],
+        ),
       ),
     );
   }
@@ -29,6 +55,24 @@ class _ShowEmailState extends State<ShowEmail> {
   getEmail() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     userEmail = prefs.getString("email") ?? "--";
+    setState(() {});
+  }
+
+  getfullname() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    fullName = prefs.getString("fullname") ?? "--";
+    setState(() {});
+  }
+
+  getusername() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    username= prefs.getString("username") ?? "--";
+    setState(() {});
+  }
+
+  getemail1() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+  email1 = prefs.getString("email1") ?? "--";
     setState(() {});
   }
 }

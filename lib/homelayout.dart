@@ -10,8 +10,8 @@ import 'package:iti_flutter_project/teams.dart';
 
 // ignore: camel_case_types
 class homelayout extends StatefulWidget {
-  final String email;
-  const homelayout({super.key, required this.email});
+  final String email,fullname,username,email1;
+  const homelayout({super.key, required this.email ,required this.email1,required this.fullname,required this.username});
   // const homelayout({Key? key}) : super(key: key);
   @override
   State<homelayout> createState() => _homelayoutState();

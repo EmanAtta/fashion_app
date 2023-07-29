@@ -21,6 +21,9 @@ class _Sign_upState extends State<Sign_up> {
       TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController _fullname = TextEditingController();
+  final TextEditingController _username = TextEditingController();
+  // final TextEditingController _email = TextEditingController();
 
   bool _obscureText = true;
 
@@ -51,17 +54,22 @@ class _Sign_upState extends State<Sign_up> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Sign up  ",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(215, 157, 91, 67)),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                     child: TextFormField(
+                        controller: _fullname,
                         decoration: InputDecoration(
                           labelText: "  full name",
                           labelStyle: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(215, 157, 91, 67)),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(22.0)),
                         ),
@@ -76,10 +84,13 @@ class _Sign_upState extends State<Sign_up> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                     child: TextFormField(
+                        controller: _username,
                         decoration: InputDecoration(
                           labelText: "  User name",
                           labelStyle: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(215, 157, 91, 67)),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(22.0)),
                         ),
@@ -98,7 +109,9 @@ class _Sign_upState extends State<Sign_up> {
                         decoration: InputDecoration(
                           labelText: "  Email",
                           labelStyle: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(215, 157, 91, 67)),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(22.0)),
                         ),
@@ -128,7 +141,9 @@ class _Sign_upState extends State<Sign_up> {
                           ),
                           labelText: "  Password",
                           labelStyle: TextStyle(
-                              fontSize: 15,color: Color.fromARGB(215, 157, 91, 67), fontWeight: FontWeight.bold),
+                              fontSize: 15,
+                              color: Color.fromARGB(215, 157, 91, 67),
+                              fontWeight: FontWeight.bold),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(22.0)),
                         ),
@@ -158,7 +173,9 @@ class _Sign_upState extends State<Sign_up> {
                         ),
                         labelText: "  Confirm password",
                         labelStyle: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold,color: Color.fromARGB(215, 157, 91, 67)),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(215, 157, 91, 67)),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(22.0)),
                       ),
@@ -173,15 +190,22 @@ class _Sign_upState extends State<Sign_up> {
                   InkWell(
                     onTap: () {
                       if (_formKey.currentState!.validate()) {
-                        
+                        savefullname(_fullname.text);
+                        saveusername(_username.text);
+                        // saveEmail(emailController.text);
+                        saveEmail1(emailController.text);
                         FirebaseAuth.instance.createUserWithEmailAndPassword(
                             email: emailController.text,
                             password: passwordController.text);
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  homelayout(email: emailController.text)),
+                              builder: (context) => homelayout(
+                                    fullname: _fullname.text,
+                                    username: _username.text,
+                                    email: emailController.text,
+                                    email1:"" ,
+                                  )),
                         );
                       }
                       ;
@@ -199,8 +223,23 @@ class _Sign_upState extends State<Sign_up> {
     );
   }
 
-  // saveEmail1(String email) async {
+  savefullname(String fullname) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("fullname", fullname);
+  }
+
+  saveusername(String username) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("username", username);
+  }
+
+  // saveEmail(String email) async {
   //   final SharedPreferences prefs = await SharedPreferences.getInstance();
   //   prefs.setString("email", email);
   // }
+
+  saveEmail1(String email1) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("email1", email1);
+  }
 }

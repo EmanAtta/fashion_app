@@ -115,7 +115,7 @@ class _LogInState extends State<LogIn> {
                         if (log_result==true) {
                           Navigator.push(context,
                             MaterialPageRoute(builder: (context) =>
-                                homelayout(email: emailController.text)),);
+                                homelayout(email: emailController.text,fullname: "",username: "",email1: "",)),);
                         }
                         else {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("log in failed")));
