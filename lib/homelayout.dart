@@ -32,7 +32,6 @@ class _homelayoutState extends State<homelayout> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(159, 219, 211, 188),
       appBar: AppBar(
-
         leading:
         IconButton(
           onPressed: (){
@@ -53,9 +52,13 @@ class _homelayoutState extends State<homelayout> {
               height: 100,
               child: DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(159, 219, 211, 188),
+                  color: Color.fromARGB(255, 194, 187, 166),
                 ),
-                child: Text('Menu drawer'),
+                child: Text('Menu drawer',
+                  style: TextStyle(fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    color: Color.fromARGB(215, 157, 91, 67),),
+                ),
               ),
             ),
             ListTile(
@@ -63,15 +66,25 @@ class _homelayoutState extends State<homelayout> {
               leading: const Icon(
                 Icons.app_shortcut,
                 size: 50,
+                  color: Color.fromARGB(180, 89, 99, 76)
               ),
-              title: const Text('APPlication Information'),
+              title: const Text(
+                  'Application Information',
+                style: TextStyle(fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    color: Color.fromARGB(215, 157, 91, 67),),
+              ),
               onTap: () {
                   Navigator.push(context, MaterialPageRoute(
                   builder: (context)=> const Info_App()),);
               },
             ),
             ListTile(
-              title: const Text('Team Name'),
+              title: const Text('Team Name',
+                style: TextStyle(fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    color: Color.fromARGB(215, 157, 91, 67),),
+              ),
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context)=> const Team_name()),);
@@ -79,6 +92,7 @@ class _homelayoutState extends State<homelayout> {
               leading: const Icon(
                 Icons.person,
                 size: 50,
+                color:Color.fromARGB(180, 89, 99, 76),
 
               )
             ),
@@ -90,9 +104,9 @@ class _homelayoutState extends State<homelayout> {
       bottomNavigationBar:
           CurvedNavigationBar(
         items: const <Widget>[
-          Icon(Icons.home, size: 35),
-          Icon(Icons.list, size: 35),
-          Icon(Icons.perm_identity, size: 35),
+          Icon(Icons.home, size: 35,color: Color.fromARGB(215, 157, 91, 67),),
+          Icon(Icons.list, size: 35,color: Color.fromARGB(215, 157, 91, 67),),
+          Icon(Icons.perm_identity, size: 35,color: Color.fromARGB(215, 157, 91, 67),),
         ],
             color: const Color.fromARGB(215, 157, 91, 67),
             buttonBackgroundColor: Color.fromARGB(180, 89, 99, 76),

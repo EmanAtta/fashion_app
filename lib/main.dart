@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:iti_flutter_project/firebase_options.dart';
+import 'package:iti_flutter_project/homelayout.dart';
 import 'package:iti_flutter_project/welcom.dart';
 
 
@@ -20,8 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: first_page(),
-
+      home:homelayout(email: 'email', email1: 'email1', fullname: 'fullname', username: 'username'),
     );
   }
 }
