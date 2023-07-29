@@ -37,7 +37,7 @@ class _homelayoutState extends State<homelayout> {
           onPressed: (){
           Navigator.pop(context);
         },
-          icon: Icon(Icons.keyboard_arrow_left
+          icon: Icon(Icons.keyboard_arrow_left,color: Color.fromARGB(180, 89, 99, 76)
         ),),
         backgroundColor:const Color.fromARGB(159, 219, 211, 188),
         elevation: 0,
@@ -80,7 +80,7 @@ class _homelayoutState extends State<homelayout> {
               },
             ),
             ListTile(
-              title: const Text('Team Name',
+              title: const Text('About Us',
                 style: TextStyle(fontSize: 18,
                     fontWeight: FontWeight.w900,
                     color: Color.fromARGB(215, 157, 91, 67),),
@@ -104,9 +104,9 @@ class _homelayoutState extends State<homelayout> {
       bottomNavigationBar:
           CurvedNavigationBar(
         items: const <Widget>[
-          Icon(Icons.home, size: 35,color: Color.fromARGB(215, 157, 91, 67),),
-          Icon(Icons.list, size: 35,color: Color.fromARGB(215, 157, 91, 67),),
-          Icon(Icons.perm_identity, size: 35,color: Color.fromARGB(215, 157, 91, 67),),
+          Icon(Icons.home, size: 35,color: Color.fromARGB(159, 219, 211, 188),),
+          Icon(Icons.list, size: 35,color: Color.fromARGB(159, 219, 211, 188),),
+          Icon(Icons.perm_identity, size: 35,color: Color.fromARGB(159, 219, 211, 188),),
         ],
             color: const Color.fromARGB(215, 157, 91, 67),
             buttonBackgroundColor: Color.fromARGB(180, 89, 99, 76),

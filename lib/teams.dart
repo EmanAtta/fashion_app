@@ -14,7 +14,9 @@ class Team_name extends StatelessWidget {
         onPressed: (){
           Navigator.pop(context);
         },
-        icon: Icon(Icons.keyboard_arrow_left
+        icon: Icon(Icons.keyboard_arrow_left,color: Color.fromARGB(180, 89, 99, 76),
+          
+        
         ),),
       backgroundColor: Color.fromARGB(255, 194, 187, 166),
         elevation: 0,
