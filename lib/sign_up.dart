@@ -30,6 +30,18 @@ class _Sign_upState extends State<Sign_up> {
   @override
   Widget build(context) {
     return Scaffold(
+      appBar: AppBar(
+        leading:
+        IconButton(
+          onPressed: (){
+          Navigator.pop(context);
+        },
+          icon: Icon(Icons.keyboard_arrow_left,color: Color.fromARGB(180, 89, 99, 76)
+        ),),
+        backgroundColor:const Color.fromARGB(159, 219, 211, 188),
+        elevation: 0,
+
+      ),
       body: Container(
         //height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
