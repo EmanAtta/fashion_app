@@ -8,12 +8,6 @@ class Team_name extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromARGB(159, 219, 211, 188),
       appBar: AppBar(
-        leading:IconButton(
-          onPressed: (){
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.keyboard_arrow_left
-          ),),
         backgroundColor:Color.fromARGB(159, 219, 211, 188),
         elevation: 0,
         title:Text(''),
@@ -23,6 +17,15 @@ class Team_name extends StatelessWidget {
           child: Column(
             children:[
               SizedBox(height: 30),
+              
+                 Container(
+                  width: double.infinity,
+                  height: 30,
+                  child: Center(child: Text("Team members :-",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w100,color:Color.fromARGB(215, 157, 91, 67) ),)),
+              
+                ),
+              
+              SizedBox(height: 20),
         
               Container(
                 width: 450,
