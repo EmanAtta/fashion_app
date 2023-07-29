@@ -7,6 +7,7 @@ import 'package:iti_flutter_project/info_app.dart';
 
 import 'package:iti_flutter_project/newtask.dart';
 import 'package:iti_flutter_project/teams.dart';
+import 'package:iti_flutter_project/welcom.dart';
 
 // ignore: camel_case_types
 class homelayout extends StatefulWidget {
@@ -19,6 +20,11 @@ class homelayout extends StatefulWidget {
 
 // ignore: camel_case_types
 class _homelayoutState extends State<homelayout> {
+
+  String userEmail = "";
+  String fullName = "";
+  String username = "";
+  String email1 = "";
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   int currentindex = 0;
   List<Widget> screens = [
@@ -43,7 +49,8 @@ class _homelayoutState extends State<homelayout> {
         elevation: 0,
         title: Text(titles[currentindex]),
       ),
-      endDrawer: Drawer(
+      endDrawer:
+      Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
@@ -60,6 +67,24 @@ class _homelayoutState extends State<homelayout> {
                     color: Color.fromARGB(215, 157, 91, 67),),
                 ),
               ),
+            ),
+            ListTile(
+                title: const Text('Home',
+                  style: TextStyle(fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    color: Color.fromARGB(215, 157, 91, 67),),
+                ),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context)=> const homelayout(email: '', email1: '', fullname: '', username: ''),
+                  ));
+                },
+                leading: const Icon(
+                  Icons.home,
+                  size: 50,
+                  color:Color.fromARGB(180, 89, 99, 76),
+
+                )
             ),
             ListTile(
 
@@ -95,6 +120,23 @@ class _homelayoutState extends State<homelayout> {
                 color:Color.fromARGB(180, 89, 99, 76),
 
               )
+            ),
+            ListTile(
+                title: const Text('Log out',
+                  style: TextStyle(fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    color: Color.fromARGB(215, 157, 91, 67),),
+                ),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context)=> const first_page()),);
+                },
+                leading: const Icon(
+                  Icons.logout,
+                  size: 50,
+                  color:Color.fromARGB(180, 89, 99, 76),
+
+                )
             ),
           ],
         ),

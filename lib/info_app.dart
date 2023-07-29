@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iti_flutter_project/homelayout.dart';
+import 'package:iti_flutter_project/teams.dart';
+import 'package:iti_flutter_project/welcom.dart';
 
 class Info_App extends StatelessWidget {
   const Info_App({super.key});
@@ -17,12 +20,86 @@ class Info_App extends StatelessWidget {
         //title:Text('Application Information'),centerTitle: true,
         elevation: 0,
       ),
+        endDrawer:
+        Drawer(
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children:  <Widget>[
+              const SizedBox(
+                height: 100,
+                child: DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 194, 187, 166),
+                  ),
+                  child: Text('Menu drawer',
+                    style: TextStyle(fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: Color.fromARGB(215, 157, 91, 67),),
+                  ),
+                ),
+              ),
+              ListTile(
+                  title: const Text('Home',
+                    style: TextStyle(fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: Color.fromARGB(215, 157, 91, 67),),
+                  ),
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context)=> const homelayout(email: '', email1: '', fullname: '', username: ''),
+                    ));
+                  },
+                  leading: const Icon(
+                    Icons.home,
+                    size: 50,
+                    color:Color.fromARGB(180, 89, 99, 76),
+
+                  )
+              ),
+              ListTile(
+                  title: const Text('About Us',
+                    style: TextStyle(fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: Color.fromARGB(215, 157, 91, 67),),
+                  ),
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=> const Team_name()),);
+                  },
+                  leading: const Icon(
+                    Icons.person,
+                    size: 50,
+                    color:Color.fromARGB(180, 89, 99, 76),
+
+                  )
+              ),
+              ListTile(
+                  title: const Text('Log out',
+                    style: TextStyle(fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: Color.fromARGB(215, 157, 91, 67),),
+                  ),
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=> const first_page()),);
+                  },
+                  leading: const Icon(
+                    Icons.logout,
+                    size: 50,
+                    color:Color.fromARGB(180, 89, 99, 76),
+
+                  )
+              ),
+            ],
+          ),
+        ),
       body:Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              width: double.infinity,
+                width: MediaQuery.of(context).size.width,
               height: 300,
               decoration: BoxDecoration(
                    borderRadius: BorderRadius.circular(30.0), //add border radius
@@ -48,7 +125,7 @@ class Info_App extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Container(
-              width: double.infinity,
+              width: MediaQuery.of(context).size.width,
                height: 250,
                decoration: BoxDecoration(
                    color: Color.fromARGB(255, 194, 187, 166),
